@@ -9,33 +9,36 @@ You should have received a copy of the GNU General Public License along with Noo
 */
 
 :root {
-    --color-primary: #212121;
-    --color-secondary: #3a3636;
-    --color-tertiary: #17171b;
-    --color-quaternary: #757575;
-    --color-quinary: #9e9e9e;
-    --button-color: #212121;
-    --button-color-hover: #424242;
-    --button-color-active: #c72510;
-    --button-color-disabled: #757575;
-    --button-color-text: #9e9e9e;
-    --text-main: #ffffff;
-    --text-secondary: #ffffff;
-    --text-tertiary: #ffffff;
-    --background-color: #212121;
+    --color-primary: #1E2A38; /* Deep Navy Blue */
+    --color-secondary: #16202B; /* Darker Blue */
+    --color-tertiary: #0D1721; /* Very Dark Blue */
+    --color-quaternary: #3B82F6; /* Neon Blue */
+    --color-quinary: #0EA5E9; /* Cyan Blue */
+    --button-color: #3B82F6; /* Neon Blue */
+    --button-color-hover: #2563EB; /* Darker Neon */
+    --button-color-active: #0EA5E9; /* Cyan */
+    --button-color-disabled: #6B7280; /* Muted Gray */
+    --button-color-text: #ffffff; /* White */
+    --text-main: #ffffff; /* White */
+    --text-secondary: #D1D5DB; /* Light Gray */
+    --text-tertiary: #A1A1AA; /* Muted Gray */
+    --background-color: #0D1721; /* Dark Blue */
     --invert: 1000;
     --sidebar-button-color: white;
-    --sidebar-button-color-hover: #0e0e1d;
-    --card-bg: #353535;
+    --sidebar-button-color-hover: #1E3A8A; /* Dark Blue */
+    --card-bg: #16202B; /* Darker Blue */
 }
 
 :root {
-    --sidebar-size: 220px;
+    --sidebar-size: 240px;
 }
+
+/* Navbar */
 .nav-bar {
     display: none;
 }
 
+/* Sidebar */
 .sidebar {
     position: fixed;
     margin: 0;
@@ -45,8 +48,10 @@ You should have received a copy of the GNU General Public License along with Noo
     overflow: auto;
     z-index: 9999;
     height: calc(100vh - 3.5rem);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Content */
 .content-container {
     margin-left: calc(var(--sidebar-size) + 40px);
     margin-right: 40px;
@@ -56,30 +61,30 @@ You should have received a copy of the GNU General Public License along with Noo
     max-width: 1200px;
 }
 
-.navbar-button {
-    display: none;
-}
-
-/* Sidebar links */
+/* Sidebar Links */
 .sidebar a {
     display: block;
     color: var(--sidebar-button-color);
     padding: 16px;
     text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease-in-out;
 }
 
-/* Active/current link */
+/* Active Link */
 .sidebar .active > .icon {
     background-color: var(--button-color-active);
     color: white;
 }
 
+/* Sidebar Layout */
 .sidebar > a {
     display: flex;
     text-align: center;
     align-items: center;
 }
 
+/* Sidebar Icons */
 .icon {
     border-radius: 30%;
     width: 45px;
@@ -90,31 +95,26 @@ You should have received a copy of the GNU General Public License along with Noo
     background-color: var(--button-color);
     color: var(--button-color-text);
     margin-right: 10px;
+    transition: all 0.2s ease-in-out;
 }
 
-.sidebar > a > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.icon:hover {
+    background-color: var(--button-color-hover);
 }
 
-/* Links on mouse-over */
+/* Sidebar Hover */
 .sidebar a:hover:not(.active) > .icon {
     background-color: var(--sidebar-button-color-hover);
 }
 
-.icon {
-    transition: all 0.2s ease-in-out;
-}
-
-/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+/* Page Content */
 div.content {
     margin-left: var(--sidebar-size);
     padding: 1px 16px;
     height: 1000px;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 1150px) {
     .sidebar {
         position: fixed;
@@ -153,11 +153,13 @@ div.content {
     }
 }
 
+/* User Avatar */
 .avatar {
     margin: 10px;
     width: 200px;
     height: 200px;
     border-radius: 5%;
+    border: 2px solid var(--color-quaternary);
 }
 
 .smallAvatar {
@@ -181,6 +183,7 @@ div.content {
     cursor: pointer;
 }
 
+/* Topbar */
 .topbar {
     position: sticky;
     margin-top: 0 !important;
